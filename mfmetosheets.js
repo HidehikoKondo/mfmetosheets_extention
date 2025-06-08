@@ -128,7 +128,7 @@ function getTableData() {
 // 対象のデータをピックアップ
 function filterData(data) {
     // category2が指定リストに含まれるものをピックアップ
-    const targetCategories = ["事業・副業", "事業経費", "家賃・地代", "電気代", "携帯電話"];
+    const targetCategories = ["事業収入（課税）", "事業収入（非課税）", "事業経費", "家賃・地代", "電気代", "携帯電話"];
     const filteredData = data.filter(item => {
         return targetCategories.includes(item.category2);
     });
