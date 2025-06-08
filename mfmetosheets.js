@@ -69,9 +69,9 @@ function sendToSheet(htmldata) {
     const clipboardItem = new ClipboardItem({ "text/html": blob });
 
     navigator.clipboard.write([clipboardItem]).then(() => {
-        alert("HTMLテーブルがクリップボードにコピーされました。");
+
         // スプレッドシートを開くか確認
-        if (confirm("スプレッドシートを開きますか？")) {
+        if (confirm("仕分けデータをクリップボードにコピーしました。\nスプレッドシートに記入しますか？")) {
             window.open("https://docs.google.com/spreadsheets/d/1N8T54Jk55rgr363fwwkwt5WVdEALPKNuSRWEzdPYex4/edit?gid=381636472#gid=381636472", "_blank");
         }
     }).catch(err => {
@@ -93,8 +93,6 @@ function createData() {
 
     return filteredData
 }
-
-
 
 
 // テーブルからデータを取得する関数
@@ -129,9 +127,10 @@ function getTableData() {
 
 // 対象のデータをピックアップ
 function filterData(data) {
-    //bankが「オリコカード」「PayPay銀行」のデータをピックアップ（副業用）
+    // category2が指定リストに含まれるものをピックアップ
+    const targetCategories = ["事業・副業", "事業経費", "家賃・地代", "電気代", "携帯電話"];
     const filteredData = data.filter(item => {
-        return item.bank === "オリコカード" || item.bank === "PayPay銀行";
+        return targetCategories.includes(item.category2);
     });
     console.log("Filtered Data:", filteredData);
     return filteredData;
