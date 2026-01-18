@@ -128,9 +128,16 @@ function getTableData() {
 // 対象のデータをピックアップ
 function filterData(data) {
     // category2が指定リストに含まれるものをピックアップ
-    const targetCategories = ["事業収入（課税）", "事業収入（非課税）", "事業経費", "家賃・地代", "電気代", "携帯電話"];
-    const filteredData = data.filter(item => {
-        return targetCategories.includes(item.category2);
+    const targetCategories = ["事業収入（課税）", "事業収入（非課税）", "事業経費", "家賃・地代", "電気代", "携帯電話", "インターネット"];
+    const filteredData = [];
+    data.forEach(item => {
+        if (targetCategories.includes(item.category2)) {
+            // targetCategoriesが携帯電話かつ、日付が15日のデータを除外
+            const isExcluded = item.category2 === "携帯電話" && item.date.includes("15");
+            if (!isExcluded) {
+                filteredData.push(item);
+            }
+        }
     });
     console.log("Filtered Data:", filteredData);
     return filteredData;
