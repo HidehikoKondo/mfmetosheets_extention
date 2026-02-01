@@ -72,7 +72,7 @@ function sendToSheet(htmldata) {
 
         // スプレッドシートを開くか確認
         if (confirm("仕分けデータをクリップボードにコピーしました。\nスプレッドシートに記入しますか？")) {
-            window.open("https://docs.google.com/spreadsheets/d/1N8T54Jk55rgr363fwwkwt5WVdEALPKNuSRWEzdPYex4/edit?gid=2446556#gid=2446556", "_blank");
+            window.open("https://docs.google.com/spreadsheets/d/1N8T54Jk55rgr363fwwkwt5WVdEALPKNuSRWEzdPYex4/", "_blank");
         }
     }).catch(err => {
         console.error("クリップボードへのコピーに失敗しました:", err);
