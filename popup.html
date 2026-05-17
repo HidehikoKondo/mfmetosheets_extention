@@ -2,27 +2,29 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
-    <title>MFME To Sheets</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MoneyTree Tool</title>
     <style>
         body {
-            width: 200px;
+            font-family: sans-serif;
+            min-width: 220px;
+            padding: 16px;
+        }
+
+        button {
+            padding: 8px 12px;
+            font-size: 14px;
         }
     </style>
 </head>
 
 <body>
-    <h1>MFME To Sheets</h1>
-    <p>この拡張機能は、MFMEのデータをGoogle Sheetsに送信するためのものです。<br>「ME to Sheets」ボタンをクリックして送信します。</p>
-    <ul>
-        <li>
-            <a href="https://docs.google.com/spreadsheets/d/1N8T54Jk55rgr363fwwkwt5WVdEALPKNuSRWEzdPYex4/"
-                target="_blank" id="open-sheet-btn">Sheetsを開く</a>
-        </li>
-    </ul>
-
-
+    <h1>MoneyTree Tool</h1>
+    <p>これは最小限の Chrome 拡張機能です。</p>
+    <button id="scrapeButton">スクレイピング</button>
+    <p id="status"></p>
+    <script src="popup.js"></script>
 </body>
-
 
 </html>

@@ -1,2 +1,0 @@
-# mfmetosheets_extention
-mfmetosheetsのchrome拡張機能
